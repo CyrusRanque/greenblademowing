@@ -21,19 +21,19 @@ export const HERO_FOCUSES = {
     img: '/images/index-slider-1.jpg',
   },
   hedges: {
-    label: 'Hedge Trimming',
+    label: 'Hedge Trimming & Pruning',
     dot: '#5c7c58',
     badge: 'Species-Timed',
     headline: 'Shaped to suit every hedge.',
-    sub: 'Precision hedge cutting and reductions timed to your plant species, never a fixed calendar.',
+    sub: 'Precision hedge cutting, shaping, and pruning timed to your plant species, never a fixed calendar.',
     img: '/images/index-slider-2.jpg',
   },
   garden: {
-    label: 'Garden & Gutters',
+    label: 'Garden Cleaning',
     dot: '#28362b',
     badge: 'Full Property Care',
-    headline: 'Pruning, weeding & rooflines.',
-    sub: 'Fruit & garden tree pruning plus scheduled hand-cleared gutter maintenance for eucalypt canopies.',
+    headline: 'Spotless gardens & rooflines.',
+    sub: 'Thorough garden cleanups, green waste removal, and scheduled hand-cleared gutter cleaning.',
     img: '/images/index-2-slider-31.jpg',
   },
 }
@@ -57,19 +57,19 @@ export const SHOWCASE_STAGES = [
   },
   {
     src: '/images/index-slider-2.jpg',
-    alt: 'Green Blade specialist trimming garden hedges',
-    title: 'Hedge Trimming',
-    sub: 'Hedge cutting and reductions timed to the species rather than a fixed calendar.',
+    alt: 'Green Blade specialist trimming and pruning garden hedges',
+    title: 'Hedge Trimming & Pruning',
+    sub: 'Hedge cutting, pruning, and reductions timed to the species rather than a fixed calendar.',
     detail:
-      'We inspect your hedge species and confirm the ideal timing and height reduction before any work starts.',
+      'We inspect your hedge and shrub species and confirm the ideal timing and height reduction before any work starts.',
   },
   {
     src: '/images/index-2-slider-21.jpg',
-    alt: 'Precision topiary and garden tree pruning',
-    title: 'Pruning & Gutter Clearing',
-    sub: 'Proactive tree pruning and scheduled hand-cleared gutters for eucalypt canopies.',
+    alt: 'Complete garden cleaning and roofline clearing',
+    title: 'Garden Cleaning',
+    sub: 'Complete yard cleanups, green waste removal, and scheduled hand-cleared gutters.',
     detail:
-      'Because eucalypt bark, gum nuts and leaves shed year-round, we schedule confirmed gutter visits and safe tree pruning for tight garden spaces.',
+      'From seasonal garden resets to clearing eucalypt bark, gum nuts, and leaves by hand, we leave every property spotless on a confirmed schedule.',
   },
 ]
 
@@ -116,7 +116,7 @@ export const SERVICE_OPTIONS = [
   },
   {
     id: 'hedge-trimming',
-    name: 'Hedge Trimming',
+    name: 'Hedge Trimming & Pruning',
     note: 'Species-timed shaping & reductions',
   },
   {
@@ -125,8 +125,8 @@ export const SERVICE_OPTIONS = [
     note: 'Deadwood removal & fruit trees',
   },
   {
-    id: 'gutter-cleaning',
-    name: 'Gutter Cleaning',
-    note: 'Hand-cleared + roofline report',
+    id: 'garden-cleaning',
+    name: 'Garden Cleaning',
+    note: 'Full cleanups, green waste & gutter clearing',
   },
 ]

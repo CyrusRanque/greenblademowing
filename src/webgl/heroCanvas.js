@@ -57,11 +57,11 @@ export function initHeroCanvas(canvas) {
     float dist = length(p - mPos);
     float glow = exp(-dist * dist * 2.2);
 
-    // Bottle Green (#0F372B) & Bone (#EFE7DA)
-    vec3 darkBg = vec3(0.059, 0.216, 0.169);
-    vec3 darkGlow = vec3(0.11, 0.32, 0.25);
-    vec3 lightBg = vec3(0.937, 0.906, 0.855);
-    vec3 lightGlow = vec3(0.059, 0.216, 0.169);
+    // Fresh Light Lawn Green (#246640) & Soft Mint-Green (#E7F4EA)
+    vec3 darkBg = vec3(0.141, 0.400, 0.251);
+    vec3 darkGlow = vec3(0.200, 0.510, 0.329);
+    vec3 lightBg = vec3(0.906, 0.957, 0.918);
+    vec3 lightGlow = vec3(0.180, 0.478, 0.294);
 
     vec3 baseCol = mix(lightBg, darkBg, u_isDark);
     vec3 accentCol = mix(lightGlow, darkGlow, u_isDark);

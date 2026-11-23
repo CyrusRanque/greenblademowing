@@ -84,7 +84,7 @@ const onCompPointerUp = () => {
 
 // Quote Configurator
 const selectedProperty = ref('Residential')
-const selectedServices = ref(['Lawn Mowing', 'Hedge Trimming'])
+const selectedServices = ref(['Lawn Mowing', 'Hedge Trimming & Pruning'])
 const drawerOpen = ref(false)
 
 const toggleService = (name) => {
@@ -163,91 +163,116 @@ onUnmounted(() => {
 <template>
   <div class="grain-overlay" aria-hidden="true" />
 
-  <!-- Editorial Header (Matches Halden / Naosu Minimal Top Bar) -->
-  <header
-    class="fixed inset-x-0 top-0 z-50 h-16 border-b backdrop-blur-lg transition-colors"
-    style="background: var(--glass-bg); border-color: var(--border)"
-  >
-    <div class="mx-auto flex h-full max-w-[1400px] items-center justify-between px-5 sm:px-10">
-      <a href="#hero" class="inline-flex items-center gap-3">
-        <img
-          v-if="!imgFailed['logo']"
-          :src="businessInfo.logo"
-          alt="Green Blade Mowing Solutions"
-          class="h-9 w-9 rounded-full bg-[#efe7da] object-contain p-0.5"
-          @error="markFailed('logo')"
-        />
-        <span class="font-editorial text-xl tracking-wide sm:text-2xl">
-          Green Blade Mowing
-        </span>
-      </a>
+<!-- Fixed Top Header: Green/White/Yellow Angled Trust Bar + Big Logo Navbar -->
+  <header class="fixed inset-x-0 top-0 z-50 border-b backdrop-blur-lg transition-colors" style="border-color: rgba(255, 255, 255, 0.2)">
+    <!-- Top Angled Split Bar (Matched to Site Green, White & Golden Yellow Palette) -->
+    <div
+      class="w-full border-b"
+      style="
+        border-color: rgba(255, 255, 255, 0.16);
+        background: linear-gradient(
+          108deg,
+          #1e5736 0%,
+          #1e5736 44%,
+          rgba(255, 255, 255, 0.94) 50.5%,
+          #f2c12e 56%,
+          #f2c12e 100%
+        );
+      "
+    >
+      <div class="font-mono-spec mx-auto grid h-9 max-w-[1400px] grid-cols-2 items-center px-5 text-[11px] font-medium uppercase tracking-[0.16em] sm:px-10">
+        <div class="flex items-center justify-start gap-1.5 text-white">
+          <span style="color: #f2c12e">&#9733;</span>
+          <span>4.5 Customer Rating</span>
+        </div>
+        <div class="flex items-center justify-end text-[#0f3820]">
+          <span>Trusted By 1000+ Clients</span>
+        </div>
+      </div>
+    </div>
 
-      <nav class="flex items-center gap-5 sm:gap-7">
-        <a
-          href="#showcase"
-          class="font-mono-spec hidden text-[11px] uppercase tracking-[0.18em] transition hover:opacity-70 md:inline"
-        >
-          Services
-        </a>
-        <a
-          href="#thermal"
-          class="font-mono-spec hidden text-[11px] uppercase tracking-[0.18em] transition hover:opacity-70 md:inline"
-        >
-          Projects
-        </a>
-        <a
-          href="#craft"
-          class="font-mono-spec hidden text-[11px] uppercase tracking-[0.18em] transition hover:opacity-70 md:inline"
-        >
-          About
-        </a>
-        <a
-          href="#order"
-          class="font-mono-spec hidden items-center gap-2 rounded-full border px-4 py-1.5 text-[11px] uppercase tracking-[0.16em] transition hover:opacity-80 sm:inline-flex"
-          style="border-color: var(--border-strong)"
-        >
-          <span>Get a Quote</span>
-          <ArrowRight class="h-3 w-3" />
-        </a>
-
-        <!-- Light/Dark Editorial Switch -->
-        <button
-          type="button"
-          @click="theme = theme === 'dark' ? 'light' : 'dark'"
-          aria-label="Toggle Bottle Green or Bone theme"
-          class="flex h-9 w-9 items-center justify-center rounded-full border transition active:scale-95"
-          style="border-color: var(--border)"
-        >
-          <Sun v-if="theme === 'dark'" class="h-4 w-4" />
-          <Moon v-else class="h-4 w-4" />
-        </button>
-
-        <!-- Quote Drawer Trigger -->
-        <button
-          type="button"
-          @click="drawerOpen = true"
-          aria-label="Open quote request"
-          class="relative flex h-9 w-9 items-center justify-center rounded-full border transition active:scale-95"
-          style="border-color: var(--border)"
-        >
-          <ClipboardList class="h-4 w-4" />
-          <span
-            class="font-mono-spec absolute -right-1 -top-1 flex h-[18px] min-w-[18px] items-center justify-center rounded-full px-1 text-[10px] font-bold"
-            style="background: var(--accent); color: var(--accent-text)"
-          >
-            {{ selectedServices.length }}
+    <!-- Main Logo & Navigation Bar -->
+    <div class="h-20 text-white" style="background: var(--glass-bg)">
+      <div class="mx-auto flex h-full max-w-[1400px] items-center justify-between px-5 sm:px-10">
+        <a href="#hero" class="inline-flex items-center gap-3.5">
+          <div class="flex items-center justify-center rounded-xl bg-white px-2.5 py-1 shadow-md">
+            <img
+              v-if="!imgFailed['logo']"
+              :src="businessInfo.logo"
+              alt="Green Blade Mowing Solutions"
+              class="h-12 w-auto object-contain sm:h-14"
+              @error="markFailed('logo')"
+            />
+          </div>
+          <span class="font-editorial hidden text-2xl tracking-wide text-white sm:inline sm:text-3xl">
+            Green Blade Mowing
           </span>
-        </button>
-      </nav>
+        </a>
+
+        <nav class="flex items-center gap-5 text-white sm:gap-7">
+          <a
+            href="#showcase"
+            class="font-mono-spec hidden text-[11px] uppercase tracking-[0.18em] text-white/90 transition hover:text-white md:inline"
+          >
+            Services
+          </a>
+          <a
+            href="#thermal"
+            class="font-mono-spec hidden text-[11px] uppercase tracking-[0.18em] text-white/90 transition hover:text-white md:inline"
+          >
+            Projects
+          </a>
+          <a
+            href="#craft"
+            class="font-mono-spec hidden text-[11px] uppercase tracking-[0.18em] text-white/90 transition hover:text-white md:inline"
+          >
+            About
+          </a>
+          <a
+            href="#order"
+            class="font-mono-spec hidden items-center gap-2 rounded-full border border-white/40 px-4 py-2 text-[11px] uppercase tracking-[0.16em] text-white transition hover:bg-white/10 sm:inline-flex"
+          >
+            <span>Get a Quote</span>
+            <ArrowRight class="h-3 w-3" />
+          </a>
+
+          <!-- Light/Dark Green Switch -->
+          <button
+            type="button"
+            @click="theme = theme === 'dark' ? 'light' : 'dark'"
+            aria-label="Toggle green theme"
+            class="flex h-10 w-10 items-center justify-center rounded-full border border-white/35 text-white transition active:scale-95"
+          >
+            <Sun v-if="theme === 'dark'" class="h-4 w-4" />
+            <Moon v-else class="h-4 w-4" />
+          </button>
+
+          <!-- Quote Drawer Trigger -->
+          <button
+            type="button"
+            @click="drawerOpen = true"
+            aria-label="Open quote request"
+            class="relative flex h-10 w-10 items-center justify-center rounded-full border border-white/35 text-white transition active:scale-95"
+          >
+            <ClipboardList class="h-4 w-4" />
+            <span
+              class="font-mono-spec absolute -right-1 -top-1 flex h-[18px] min-w-[18px] items-center justify-center rounded-full px-1 text-[10px] font-bold"
+              style="background: var(--accent); color: var(--accent-text)"
+            >
+              {{ selectedServices.length }}
+            </span>
+          </button>
+        </nav>
+      </div>
     </div>
   </header>
 
   <main>
-    <!-- SECTION 1: Editorial Poster Hero (Bottle Green + Bone Serif + Vermilion CTA) -->
+    <!-- SECTION 1: Editorial Poster Hero -->
     <section
       id="hero"
       ref="heroStageRef"
-      class="relative flex min-h-[100dvh] flex-col justify-between overflow-hidden pb-10 pt-24"
+      class="relative flex min-h-[100dvh] flex-col justify-between overflow-hidden pb-10 pt-36"
     >
       <canvas ref="heroCanvasRef" class="pointer-events-none absolute inset-0 h-full w-full" aria-hidden="true" />
 
@@ -263,17 +288,17 @@ onUnmounted(() => {
         </div>
       </div>
 
-      <!-- Center Poster Composition (Layered Display Type + Tilting Garden Photo) -->
-      <div class="relative z-10 mx-auto my-auto flex w-full max-w-[1400px] flex-col items-center px-5 py-8 sm:px-10">
-        <!-- Giant Upper Editorial Line -->
-        <h1 class="font-editorial pointer-events-none relative z-20 self-start text-[clamp(4.2rem,13vw,11.5rem)] leading-[0.82] tracking-[-0.02em]">
+      <!-- Center Poster Composition (Balanced Display Type + Tilting Garden Photo) -->
+      <div class="relative z-10 mx-auto my-auto flex w-full max-w-[1400px] flex-col items-center px-5 py-6 sm:px-10">
+        <!-- Upper Editorial Line -->
+        <h1 class="font-editorial pointer-events-none relative z-20 self-start text-[clamp(2.5rem,6vw,5.2rem)] leading-[0.92] tracking-[-0.02em]">
           <span class="italic">SHARP</span>
-          <span class="ml-3 not-italic sm:ml-6" style="color: var(--accent)">LAWNS</span>
+          <span class="ml-3 not-italic sm:ml-5" style="color: var(--accent)">LAWNS</span>
         </h1>
 
-        <!-- Overlapping Center 3D-Tilt Garden Stage -->
+        <!-- Center 3D-Tilt Garden Stage -->
         <div
-          class="relative z-10 -my-6 w-full max-w-[540px] sm:-my-12 lg:max-w-[620px]"
+          class="relative z-10 my-3 w-full max-w-[540px] sm:my-4 lg:max-w-[620px]"
           style="perspective: 1200px"
         >
           <div
@@ -297,8 +322,8 @@ onUnmounted(() => {
           </div>
         </div>
 
-        <!-- Giant Lower Editorial Line -->
-        <p class="font-editorial pointer-events-none relative z-20 self-end text-right text-[clamp(4rem,12vw,10.5rem)] italic leading-[0.82] tracking-[-0.02em]">
+        <!-- Lower Editorial Line -->
+        <p class="font-editorial pointer-events-none relative z-20 self-end text-right text-[clamp(2.4rem,5.5vw,4.8rem)] italic leading-[0.92] tracking-[-0.02em]">
           PRECISION
         </p>
       </div>
@@ -476,7 +501,7 @@ onUnmounted(() => {
               Before
             </span>
             <span
-              class="font-mono-spec pointer-events-none absolute right-3 top-3 z-10 rounded-full px-3 py-1 text-[11px] uppercase tracking-wider text-[#efe7da]"
+              class="font-mono-spec pointer-events-none absolute right-3 top-3 z-10 rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-black"
               style="background: var(--accent)"
             >
               After
@@ -628,7 +653,7 @@ onUnmounted(() => {
               class="relative z-10 p-7 text-[#efe7da]"
               style="background: linear-gradient(to top, rgba(8, 28, 22, 0.94) 0%, rgba(8, 28, 22, 0.45) 65%, transparent 100%)"
             >
-              <h3 class="font-editorial text-3xl">Edging &amp; Gutter Clearing</h3>
+              <h3 class="font-editorial text-3xl">Garden Cleaning &amp; Edging</h3>  
               <p class="mt-1.5 text-sm text-[#efe7da]/85">
                 Crisp lawn borders plus hand-cleared gutters with roofline reports—tailored for eucalypt canopies that shed year-round.
               </p>
