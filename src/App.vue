@@ -205,7 +205,7 @@ onUnmounted(() => {
             />
           </div>
           <span class="font-editorial hidden text-2xl tracking-wide text-white sm:inline sm:text-3xl">
-            Green Blade Mowing
+            Green Blade Mowing Solutions
           </span>
         </a>
 
@@ -292,8 +292,8 @@ onUnmounted(() => {
       <div class="relative z-10 mx-auto my-auto flex w-full max-w-[1400px] flex-col items-center px-5 py-6 sm:px-10">
         <!-- Upper Editorial Line -->
         <h1 class="font-editorial pointer-events-none relative z-20 self-start text-[clamp(2.5rem,6vw,5.2rem)] leading-[0.92] tracking-[-0.02em]">
-          <span class="italic">SHARP</span>
-          <span class="ml-3 not-italic sm:ml-5" style="color: var(--accent)">LAWNS</span>
+          <span class="italic">TRANSFORMING</span>
+          <span class="ml-3 italic sm:ml-5" style="color: var(--accent)">LAWNS</span>
         </h1>
 
         <!-- Center 3D-Tilt Garden Stage -->
@@ -324,6 +324,7 @@ onUnmounted(() => {
 
         <!-- Lower Editorial Line -->
         <p class="font-editorial pointer-events-none relative z-20 self-end text-right text-[clamp(2.4rem,5.5vw,4.8rem)] italic leading-[0.92] tracking-[-0.02em]">
+          <span class="ml-3 italic sm:ml-5" style="color: var(--accent)">WITH</span>
           PRECISION
         </p>
       </div>
@@ -684,6 +685,94 @@ onUnmounted(() => {
       </div>
     </section>
 
+    <!-- SECTION 4.5: Green Blade Signature Flyer Showcase -->
+    <section class="py-16 sm:py-24">
+      <div class="mx-auto max-w-[1400px] px-5 sm:px-10">
+        <div
+          class="overflow-hidden rounded-[20px] border bg-white text-[#143d25] shadow-2xl"
+          style="border-color: var(--border)"
+        >
+          <div class="grid grid-cols-1 lg:grid-cols-12">
+            <!-- Left Column: White Logo Header + Sweeping Green Wave -->
+            <div class="flex flex-col justify-between lg:col-span-6">
+              <!-- Top White Zone: Logo + Angled "Reliable & expert" Script -->
+              <div class="flex flex-wrap items-center justify-between gap-4 bg-white px-7 py-8 sm:px-10">
+                <img
+                  v-if="!imgFailed['logo']"
+                  :src="businessInfo.logo"
+                  alt="Green Blade Mowing"
+                  class="h-20 w-auto object-contain sm:h-24"
+                  @error="markFailed('logo')"
+                />
+                <p
+                  class="text-3xl font-bold text-[#1e5736] sm:text-4xl lg:-rotate-3"
+                  style="font-family: 'Caveat', cursive"
+                >
+                  Reliable &amp; expert
+                </p>
+              </div>
+
+              <!-- Lower Sweeping Green Wave: Services + Contact -->
+              <div class="relative flex-1 rounded-tr-[110px] bg-[#1e5736] px-7 py-10 text-white sm:rounded-tr-[160px] sm:px-12 sm:py-12">
+                <p class="font-mono-spec text-xs font-medium uppercase tracking-[0.22em]" style="color: #f2c12e">
+                  Services :
+                </p>
+
+                <ul class="mt-4 space-y-2.5 text-xl font-semibold sm:text-2xl">
+                  <li v-for="opt in SERVICE_OPTIONS" :key="opt.id">
+                    <a
+                      href="#order"
+                      @click="!selectedServices.includes(opt.name) && toggleService(opt.name)"
+                      class="inline-flex items-center gap-2.5 transition hover:translate-x-1 hover:text-[#f2c12e]"
+                    >
+                      <span class="h-2 w-2 rounded-full bg-[#f2c12e]" />
+                      <span>{{ opt.name }}</span>
+                    </a>
+                  </li>
+                </ul>
+
+                <div class="mt-9 border-t border-white/20 pt-6">
+                  <a
+                    :href="businessInfo.phoneHref"
+                    class="block text-2xl font-bold tracking-tight text-white transition hover:text-[#f2c12e] sm:text-3xl"
+                  >
+                    contact us @ {{ businessInfo.phone }}
+                  </a>
+                  <p class="font-mono-spec mt-1.5 text-sm text-white/80">
+                    {{ businessInfo.website }}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Curved Garden Photo + "Transforming lawns with precision" -->
+            <div class="relative min-h-[340px] bg-white lg:col-span-6 lg:min-h-[520px]">
+              <div class="relative h-full w-full overflow-hidden lg:rounded-bl-[160px]">
+                <img
+                  v-if="!imgFailed['flyer-garden']"
+                  src="/images/index-2-slider-31.jpg"
+                  alt="Green Blade Mowing landscaped garden"
+                  class="h-full w-full object-cover"
+                  @error="markFailed('flyer-garden')"
+                />
+                <div
+                  class="absolute inset-0"
+                  style="background: linear-gradient(to top, rgba(20, 61, 37, 0.85) 0%, rgba(20, 61, 37, 0.2) 55%, transparent 100%)"
+                />
+                <div class="absolute bottom-8 right-8 left-8 text-right text-white sm:bottom-12 sm:right-12">
+                  <p class="font-editorial text-3xl leading-none tracking-tight sm:text-5xl">
+                    Transforming lawns
+                    <br />
+                    <span style="color: #f2c12e">with precision</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
     <!-- SECTION 5: Interactive Quote Configurator -->
     <section id="order" class="py-24 sm:py-32">
       <div class="mx-auto grid max-w-[1400px] items-center gap-12 px-5 sm:px-10 lg:grid-cols-12">
