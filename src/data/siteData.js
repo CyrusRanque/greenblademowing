@@ -4,7 +4,7 @@ export const businessInfo = {
   tagline: 'Transforming lawns with precision.',
   phone: '0480 758 829',
   phoneHref: 'tel:0480758829',
-  email: 'hello@greenblademowing.com.au',
+  email: 'ken@greenblademowing.com.au',
   website: 'www.greenblademowing.com.au',
   base: 'Cranbourne, VIC',
   area: 'Southeast Melbourne',

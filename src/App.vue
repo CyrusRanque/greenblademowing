@@ -738,9 +738,12 @@ onUnmounted(() => {
                   >
                     contact us @ {{ businessInfo.phone }}
                   </a>
-                  <p class="font-mono-spec mt-1.5 text-sm text-white/80">
-                    {{ businessInfo.website }}
-                  </p>
+                  <a
+                    :href="`mailto:${businessInfo.email}`"
+                    class="font-mono-spec mt-1.5 inline-block text-sm text-white/85 transition hover:text-[#f2c12e]"
+                  >
+                    {{ businessInfo.email }}
+                  </a>
                 </div>
               </div>
             </div>
