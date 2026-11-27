@@ -26,7 +26,7 @@ export const HERO_FOCUSES = {
     badge: 'Species-Timed',
     headline: 'Shaped to suit every hedge.',
     sub: 'Precision hedge cutting, shaping, and pruning timed to your plant species, never a fixed calendar.',
-    img: '/images/index-slider-2.jpg',
+    img: '/images/479426374.jpg',
   },
   garden: {
     label: 'Gutter Cleaning',
@@ -56,8 +56,8 @@ export const SHOWCASE_STAGES = [
       'Set-cycle mowing or one-off tidy-ups for property sales, special occasions, or overgrown yards—confirmed with a free itemised estimate.',
   },
   {
-    src: '/images/index-slider-2.jpg',
-    alt: 'Green Blade specialist trimming and pruning garden hedges',
+    src: '/images/479426374.jpg',
+    alt: 'Freshly mowed lawn with trimmed hedges and curved edging',
     title: 'Hedge Trimming & Pruning',
     sub: 'Hedge cutting, pruning, and reductions timed to the species rather than a fixed calendar.',
     detail:

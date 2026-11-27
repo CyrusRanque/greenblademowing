@@ -32,7 +32,7 @@ watch(
   { immediate: true }
 )
 
-const activeFocus = ref('hedges')
+const activeFocus = ref('mowing')
 const heroCanvasRef = ref(null)
 const specsCanvasRef = ref(null)
 const heroStageRef = ref(null)
