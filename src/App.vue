@@ -183,7 +183,7 @@ onUnmounted(() => {
       <div class="font-mono-spec mx-auto grid h-9 max-w-[1400px] grid-cols-2 items-center px-5 text-[11px] font-medium uppercase tracking-[0.16em] sm:px-10">
         <div class="flex items-center justify-start gap-1.5 text-white">
           <span style="color: #f2c12e">&#9733;</span>
-          <span>4.5 Customer Rating</span>
+          <span>4.9 Customer Rating</span>
         </div>
         <div class="flex items-center justify-end text-[#0f3820]">
           <span>Trusted By 1000+ Clients</span>
@@ -695,8 +695,8 @@ onUnmounted(() => {
           <div class="grid grid-cols-1 lg:grid-cols-12">
             <!-- Left Column: White Logo Header + Sweeping Green Wave -->
             <div class="flex flex-col justify-between lg:col-span-6">
-              <!-- Top White Zone: Logo + Angled "Reliable & expert" Script -->
-              <div class="flex flex-wrap items-center justify-between gap-4 bg-white px-7 py-8 sm:px-10">
+              <!-- Top White Zone: Logo + "Reliable & expert" right beside it -->
+              <div class="flex flex-wrap items-center justify-start gap-5 bg-white px-7 py-8 sm:gap-7 sm:px-10">
                 <img
                   v-if="!imgFailed['logo']"
                   :src="businessInfo.logo"

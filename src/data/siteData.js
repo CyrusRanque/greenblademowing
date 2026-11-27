@@ -29,11 +29,11 @@ export const HERO_FOCUSES = {
     img: '/images/index-slider-2.jpg',
   },
   garden: {
-    label: 'Garden Cleaning',
+    label: 'Gutter Cleaning',
     dot: '#28362b',
-    badge: 'Full Property Care',
-    headline: 'Spotless gardens & rooflines.',
-    sub: 'Thorough garden cleanups, green waste removal, and scheduled hand-cleared gutter cleaning.',
+    badge: 'Scheduled Roofline Care',
+    headline: 'Clean gutters & rooflines.',
+    sub: 'Scheduled hand-cleared gutters and downpipes with roofline reports built for eucalypt canopies.',
     img: '/images/index-2-slider-31.jpg',
   },
 }
@@ -65,11 +65,11 @@ export const SHOWCASE_STAGES = [
   },
   {
     src: '/images/index-2-slider-21.jpg',
-    alt: 'Complete garden cleaning and roofline clearing',
-    title: 'Garden Cleaning',
-    sub: 'Complete yard cleanups, green waste removal, and scheduled hand-cleared gutters.',
+    alt: 'Scheduled hand-cleared gutter cleaning and roofline inspection',
+    title: 'Gutter Cleaning',
+    sub: 'Scheduled hand-cleared gutters and downpipes across Melbourne’s outer south-east.',
     detail:
-      'From seasonal garden resets to clearing eucalypt bark, gum nuts, and leaves by hand, we leave every property spotless on a confirmed schedule.',
+      'Because eucalypt canopy sheds bark, gum nuts, and leaves year-round, we clear gutters by hand and report back on the roofline on a confirmed visit—never an emergency callout.',
   },
 ]
 
@@ -125,8 +125,8 @@ export const SERVICE_OPTIONS = [
     note: 'Deadwood removal & fruit trees',
   },
   {
-    id: 'garden-cleaning',
-    name: 'Garden Cleaning',
-    note: 'Full cleanups, green waste & gutter clearing',
+    id: 'gutter-cleaning',
+    name: 'Gutter Cleaning',
+    note: 'Hand-cleared + roofline report',
   },
 ]
